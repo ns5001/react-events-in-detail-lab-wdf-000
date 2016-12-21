@@ -1,15 +1,17 @@
+const React = require('react');
+
 class CoordinatesButton extends React.Component{
   constructor(onReceiveCoordinates) {
     super();
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick(event) {
-    ary = []
+    var ary = []
     var x = event.clientX;
     var y = event.clientY;
     ary.push(x)
     ary.push(y)
-    onReceiveCoordinates(ary)
+    this.props.onReceiveCoordinates(ary)
   }
   render(){
     return(
@@ -18,4 +20,4 @@ class CoordinatesButton extends React.Component{
   }
 }
 
-module.exports = CoordinatesButton 
+module.exports = CoordinatesButton
